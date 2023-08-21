@@ -9,9 +9,6 @@ void output(double x[MAXSIZE], long n);            //输出结果
 int main(int argc, char *argv[])
 {
     double a[MAXSIZE][MAXSIZE+1], x[MAXSIZE], s, max, t;
-    // a[][] 存放增广矩阵
-    // x[] 存放求解的 x 向量
-    // s 是回代时使用，是用来存储中间变量的
     long n, i, j, k, maxi;
     printf("请输入原方程的阶数:");
     scanf("%ld", &n);
@@ -53,26 +50,14 @@ int main(int argc, char *argv[])
     }else{
       for(k = n-1; k>=0; k--){
         s = 0;
-        // s 存放的是将之前求解完的值都带入方程中系数得到的临时变量
-        // eg: 已经求得 x_3 = 2, x_2 = 1
-        // 带入方程 2x_1 + 5*x_2 - 3*x_3 = -3中
-        // s = 5*1 - 3*2 = -1
 
         // 下面的循环就是实现上述例子来计算s的值
         for(j = k+1; j<=n-1; j++){
           s += a[k][j] * x[j];
-          // x[j] 是已经求解的 x_{i} 值
-          // a[k][j] 是方程x_{i}前的系数
         }
 
         // 计算新的 x 值
         x[k] = (a[k][n] - s) / a[k][k];
-        // a[k][k] 就是代求x前的系数
-        // a[k][n] 就是等号右端的常数
-        // 就是移项在除上 当前系数
-        // eg: 已知方程 2x_1 + 5*x_2 - 3*x_3 = -3
-        // 其中 s = 5*x_2 - 3*x_3 = -1
-        // x_1 = (-3 -s)/2
       }
     
       //输出结果
