@@ -9,9 +9,6 @@ void output(double x[MAXSIZE], long n, long xj[MAXSIZE]);            //输出结
 int main(int argc, char *argv[])
 {
     double a[MAXSIZE][MAXSIZE+1], x[MAXSIZE], s, max, doublet;
-    // a[][] 存放增广矩阵
-    // x[] 存放求解的 x 向量
-    // s 是回代时使用，是用来存储中间变量的
     long n, i, j, k, maxi, maxj, xj[MAXSIZE], longt;
     printf("请输入原方程的阶数:");
     scanf("%ld", &n);
