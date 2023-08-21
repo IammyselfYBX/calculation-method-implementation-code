@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
 {
     double a[MAXSIZE][MAXSIZE+1], x[MAXSIZE], s;
     long n, i, j, k;
-    // n 是方程阶数
     printf("请输入原方程的阶数:");
     scanf("%ld", &n);
     input(a, n); //输入方程
