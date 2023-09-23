@@ -81,7 +81,7 @@ void output_matrix(double a[MAXSIZE][MAXSIZE], double x[MAXSIZE], long n)
         for (j = 0; j <= n-1; j++) {
             printf("%10.2lf", a[i-1][j]);
         }
-        printf("%10.2lf", x[i]);
+        printf("%10.2lf", x[i-1]);
         printf("\n");
     }
 }
