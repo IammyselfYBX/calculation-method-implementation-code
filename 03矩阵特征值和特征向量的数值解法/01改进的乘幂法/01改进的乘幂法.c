@@ -2,13 +2,9 @@
 #include <math.h>
 #define MAXSIZE 50
 
-// 读入方阵A和初始向量 V
 void input(double a[][MAXSIZE], double v[], long n);
-// 计算 U=AV
 void matrix_product(double a[][MAXSIZE], double u[], double v[], long n);
-// 向量U的长度归一化
 void normalization(double u[], double v[], long n, double *pm1);
-// 输出计算结果
 void output(double v[], long n, double m1);
 
 int main(int argc, char *argv[])
